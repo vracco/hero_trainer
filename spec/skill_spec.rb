@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe Skill do
-  let(:subject) { Skill.new :strength }
+describe HeroTrainer::Skill do
+  let(:subject) { HeroTrainer::Skill.new :strength }
 
   context 'constructor' do
     it 'requires a name' do
       expect { subject }.to_not raise_error
-      expect { Skill.new }.to raise_error ArgumentError
+      expect { HeroTrainer::Skill.new }.to raise_error ArgumentError
     end
   end
 
@@ -20,12 +20,12 @@ describe Skill do
     end
 
     it 'is passed in constructor' do
-      subject = Skill.new :wisdom
+      subject = HeroTrainer::Skill.new :wisdom
       subject.name.should == :wisdom
     end
 
     it 'is always treated as a symbol' do
-      subject = Skill.new 'wisdom'
+      subject = HeroTrainer::Skill.new 'wisdom'
       subject.name.should == :wisdom
     end
   end
@@ -64,7 +64,7 @@ describe Skill do
 
   context 'level' do
     def build_with_exp points
-      Skill.new(:strength).tap { |s| s.add_exp points }
+      HeroTrainer::Skill.new(:strength).tap { |s| s.add_exp points }
     end
 
     it 'is retrieved via #level' do

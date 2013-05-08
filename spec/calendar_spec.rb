@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Calendar do
+describe HeroTrainer::Calendar do
   context '#year' do
     it 'by default is 1' do
       subject.year.should == 1

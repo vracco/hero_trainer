@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Hero do
-  let(:subject) { Hero.new 'Sennar' }
+describe HeroTrainer::Hero do
+  let(:subject) { HeroTrainer::Hero.new 'Sennar' }
 
   context 'constructor' do
     it 'requires a name' do
@@ -19,12 +19,12 @@ describe Hero do
     end
 
     it 'is passed in constructor' do
-      subject = Hero.new 'Giuseppe'
+      subject = HeroTrainer::Hero.new 'Giuseppe'
       subject.name.should == 'Giuseppe'
     end
 
     it 'is Unknown if it is not passed in constructor' do
-      subject = Hero.new
+      subject = HeroTrainer::Hero.new
       subject.name.should == 'Unknown'
     end
   end
@@ -60,7 +60,7 @@ describe Hero do
     end
 
     it 'returns Skill objects' do
-      subject.skills.map(&:class).uniq.should == [Skill]
+      subject.skills.map(&:class).uniq.should == [HeroTrainer::Skill]
     end
 
     it 'are strength, wisdom, dexterity, constitution, charisma' do
@@ -96,7 +96,7 @@ describe Hero do
 
   context '#age' do
     it 'returns the years passed in the calendar + 18' do
-      calendar = Calendar.new
+      calendar = HeroTrainer::Calendar.new
       calendar.pass 3000
       subject.age(calendar).should == 28
     end
