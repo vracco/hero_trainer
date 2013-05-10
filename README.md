@@ -15,7 +15,7 @@ At the moment there are the following components:
 To run the specs:
 
 ```
-    gem install rspec
+    bundle install
     rspec --color
 ```
 
