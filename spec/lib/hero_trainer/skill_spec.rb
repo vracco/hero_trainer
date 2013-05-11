@@ -8,6 +8,14 @@ describe HeroTrainer::Skill do
       expect { subject }.to_not raise_error
       expect { HeroTrainer::Skill.new }.to raise_error ArgumentError
     end
+
+    it 'accepts name as string' do
+      expect { HeroTrainer::Skill.new 'foo' }.to_not raise_error
+    end
+
+    it 'accepts name as symbol' do
+      expect { HeroTrainer::Skill.new :foo }.to_not raise_error
+    end
   end
 
   context 'name' do
