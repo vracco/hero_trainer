@@ -16,7 +16,7 @@ To run the specs:
 
 ```
     bundle install
-    rspec --color
+    bundle exec guard
 ```
 
 ## Contributing

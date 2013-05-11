@@ -5,7 +5,7 @@ module HeroTrainer
       @life = 100
       @skills = [Skill.new(:strength), Skill.new(:wisdom), Skill.new(:dexterity), Skill.new(:constitution), Skill.new(:charisma)]
     end
-
+ 
     def name 
       @name
     end
@@ -23,7 +23,7 @@ module HeroTrainer
         @life = life
       end
     end
-    
+      
     def skills
       @skills
     end
