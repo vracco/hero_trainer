@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe HeroTrainer::Game do
   let(:hero) { HeroTrainer::Hero.new }
-  let(:subject) { HeroTrainer::Game.new hero }
-
+  let(:subject) { HeroTrainer::Game.new hero } 
+  
   describe 'constructor' do
     it 'requires a valid hero' do
       expect { HeroTrainer::Game.new 'foo' }.to raise_error ArgumentError, /valid.*hero/
@@ -12,7 +12,6 @@ describe HeroTrainer::Game do
 
   describe 'hero' do
     it 'can be set via constructor' do
-      hero = HeroTrainer::Hero.new
       HeroTrainer::Game.new(hero).hero.should == hero
     end
 
