@@ -1,11 +1,11 @@
 module HeroTrainer
   class Game
-    def initialize hero, calendar={}
-      unless hero.kind_of? HeroTrainer::Hero
+    def initialize hero, options={}
+      unless hero.kind_of? Hero
         raise ArgumentError, "require a valid hero"
       end
       @hero = hero
-      @calendar = calendar[:calendar]
+      @calendar = options[:calendar] || Calendar.new
     end
 
     def hero
@@ -13,11 +13,7 @@ module HeroTrainer
     end
 
     def calendar
-      unless @calendar
-        @calendar = HeroTrainer::Calendar.new
-      else
-        @calendar
-      end
+      @calendar
     end
   end
 end
